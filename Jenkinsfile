@@ -6,7 +6,7 @@ pipeline {
         stage('build') {
             steps {
               bat '''
-                 cd rsvp-service
+                 cd ./level-up-service
                  ./mvnw -DskipTests clean compile
               '''
             }
@@ -15,7 +15,7 @@ pipeline {
         stage('test') {
             steps {
               bat '''
-                 cd rsvp-service
+                 cd level-up-service
                      ./mvnw test
               '''
             }
@@ -24,7 +24,7 @@ pipeline {
         stage('deliver') {
             steps {
               bat '''
-                 cd rsvp-service
+                 cd level-up-service
                      ./mvnw -DskipTests install
               '''
             }
